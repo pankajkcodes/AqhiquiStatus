@@ -1,6 +1,8 @@
 package com.pankajkcodes.aqhiquistatus.adapters;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,6 +42,12 @@ public class SaveVideoAdapter extends RecyclerView.Adapter<SaveVideoAdapter.Save
         Glide.with(context).load(model.getUri())
                 .into(holder.imageView);
         holder.textView.setText(model.getFilename());
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(model.getPath()));
+            intent.setDataAndType(Uri.parse(model.getPath()), "video/mp4");
+
+            context.startActivity(intent);
+        });
     }
 
     @Override

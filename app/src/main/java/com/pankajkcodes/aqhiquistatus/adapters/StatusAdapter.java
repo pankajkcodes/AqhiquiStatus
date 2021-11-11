@@ -1,5 +1,7 @@
 package com.pankajkcodes.aqhiquistatus.adapters;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,6 +26,7 @@ public class StatusAdapter extends RecyclerView.Adapter<StatusAdapter.StatusView
 
     ArrayList<StatusModel> videos;
 
+    Context context;
 
     public StatusAdapter(ArrayList<StatusModel> videos) {
         this.videos = videos;
@@ -58,6 +61,7 @@ public class StatusAdapter extends RecyclerView.Adapter<StatusAdapter.StatusView
             }
 
         });
+
 
     }
 
